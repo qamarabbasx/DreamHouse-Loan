@@ -1,30 +1,31 @@
 <?php
 
-// include 'inc/config.php';
+include 'db_connect.php';
 
 $errorMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    $name = $_POST['name'];
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $password_confirmation = $_POST['password_confirmation'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
 
     // validate password
     if ($password == $password_confirmation) {
 
         // Insert into users 
-        $regiserQuery = "INSERT INTO users (username, password, email, phone) VALUES ('$username', '$password', '$email' , '$phone')";
+        $regiserQuery = "INSERT INTO users (name, username, email, password ) VALUES ('$name','$username', '$email' , '$password')";
 
-        if ($mysqli->query($regiserQuery) === TRUE) {
+        if ($conn->query($regiserQuery) === TRUE) {
             $_SESSION['is_user_logged_in'] == TRUE;
-            $_SESSION['user_id'] = $mysqli->insert_id;
-            $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $conn->insert_id;
+            $_SESSION['name'] = $name;
+            $_SESSION['usesrname'] = $usesrname;
             header("Location:index.php");
         } else {
-            echo "Error: " . $sql . "<br>" . $mysqli->error;
+            echo "Error: " . $sql . "<br>" . $conn->error;
             exit;
         }
     } else {
@@ -65,16 +66,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ?>
 
             <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Enter your full name" autocomplete="off">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your full name" autocomplete="off">
+            </div>
+            <div class="form-control">
+                <label for="username">UserName</label>
+                <input type="text" name="username" id="username" placeholder="Enter your full username" autocomplete="off">
             </div>
             <div class="form-control">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Enter your Email">
-            </div>
-            <div class="form-control">
-                <label for="phone">Phone Number</label>
-                <input type="number" name="phone" id="phone" placeholder="Enter your Phone Number" autocomplete="off">
             </div>
             <div class="form-control">
                 <label for="password">Password</label>
