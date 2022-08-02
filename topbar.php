@@ -21,7 +21,7 @@
         <large><b>Loan Management System</b></large>
       </div>
 	  	<div class="col-md-2 float-right text-white">
-	  		<a href="ajax.php?action=logout" class="text-white"><?php echo $_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a>
+	  		<a href="ajax.php?action=logout" class="text-white"><?php echo $_SESSION['login_name'] ?> <i class="fa fa-power-off"></i> Logout </a>
 	    </div>
     </div>
   </div>
