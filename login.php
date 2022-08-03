@@ -93,14 +93,18 @@
 			data:$(this).serialize(),
 			error:err=>{
 				console.log(err)
-		$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
-
+				$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
+				
 			},
 			success:function(resp){
+<<<<<<< HEAD
 			
 				// $user_type = "SELECT * FROM users WHERE type =='User'";
 				// console.log($user_type);
 
+=======
+				console.log(resp)
+>>>>>>> 21c738b1f972fdcf75ec3feaca78b7431143c4dd
 				if(resp == 1){
 					console.log(resp);
 						location.href= "index.php?page=home";

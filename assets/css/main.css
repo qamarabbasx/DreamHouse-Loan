@@ -203,6 +203,7 @@ p{
 	margin: 0 auto;
 }
 #services .service-bottom{
+	width: inherit;
 	display: flex;
 	align-items: center;
 	justify-content: center;

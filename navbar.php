@@ -1,7 +1,7 @@
 
 <style>
 </style>
-<nav id="sidebar" class='mx-lt-5 bg-warning' >
+<nav id="sidebar" class='mx-lt-5 ' >
 		
 		<div class="sidebar-list">
 
