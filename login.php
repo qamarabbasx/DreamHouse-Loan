@@ -91,10 +91,11 @@
 			data:$(this).serialize(),
 			error:err=>{
 				console.log(err)
-		$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
-
+				$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
+				
 			},
 			success:function(resp){
+				console.log(resp)
 				if(resp == 1){
 					location.href ='index.php?page=home';
 				}else if(resp == 2){

@@ -13,6 +13,9 @@ body {
   color: #444444;
   width: 100%;
   height: calc(100%);
+  background-image:url(assets/img/Home.png);
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 
 a {
@@ -1616,15 +1619,19 @@ section {
     position: absolute;
     bottom: 0;
 }
+nav {
+  background-image: linear-gradient(to left, #74ebd5, #9face6) !important;
+
+}
 nav#sidebar {
     height: calc(100%);
     position: fixed;
     z-index: 99;
     left: 0;
     width: 250px;
-    background: url(../../../assets/img/travel-cover.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background: url(../img/Home.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
 }
 a.nav-item {
     position: relative;
@@ -1632,12 +1639,12 @@ a.nav-item {
     padding: .75rem 1.25rem;
     margin-bottom: -1px;
     border: 1px solid rgba(0,0,0,.125);
-    background-color: #000000c4;
+    /* background-color: #74ebd5; */
     color: #989898;
     font-weight: 600;
 }
 a.nav-item:hover, .nav-item.active {
-    background-color: #000000ad;
+    background-color: #74ebd5;
     color: #fffafa;
 }
 main#view-panel{

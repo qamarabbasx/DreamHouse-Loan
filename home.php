@@ -1,9 +1,13 @@
 <?php include 'db_connect.php' ?>
 <style>
-   
+   body{
+    background-image:url(assets/img/Home.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+   }
 </style>
 
-<div class="containe-fluid">
+<div class="containe-fluid  ">
 
 	<div class="row">
 		<div class="col-lg-12">
@@ -13,7 +17,7 @@
 
 	<div class="row mt-3 ml-3 mr-3">
 			<div class="col-lg-12">
-			<div class="card" style="background-color: gray">
+			<div class="card" >
 				<div class="card-body">
 						<h1>Admin Dashboard</h1>			
 				</div>

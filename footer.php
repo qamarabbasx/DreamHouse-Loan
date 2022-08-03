@@ -1,6 +1,3 @@
-
-	<!--  Services Section End -->
-
     <!--  Footer Section Start -->
 	<!-- <section id="footer">
 		<div class="footer container">
