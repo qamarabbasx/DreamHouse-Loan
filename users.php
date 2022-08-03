@@ -1,7 +1,13 @@
 <?php 
 
 ?>
-
+<style>
+   body{
+    background-image:url(assets/img/Home.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+   }
+</style>
 <div class="container-fluid">
 	
 	<div class="row">
