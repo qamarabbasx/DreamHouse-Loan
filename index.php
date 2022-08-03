@@ -32,6 +32,7 @@
 </style>
 
 <body>
+
 	<?php include 'topbar.php' ?>
 	<?php include 'navbar.php' ?>
   <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -41,6 +42,7 @@
   <main id="view-panel" >
       <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
   	<?php include $page.'.php' ?>
+    
   	
 
   </main>

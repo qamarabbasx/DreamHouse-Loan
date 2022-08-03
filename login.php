@@ -33,7 +33,9 @@
 	 <?
 	// php include('./header.php');
 	 ?> 
-	<?php include('./db_connect.php'); ?>
+	<?php include('./db_connect.php'); 
+
+	?>
 	<?php
 	session_start();
 	if(isset($_SESSION['login_id']))
@@ -95,8 +97,13 @@
 
 			},
 			success:function(resp){
+			
+				// $user_type = "SELECT * FROM users WHERE type =='User'";
+				// console.log($user_type);
+
 				if(resp == 1){
-					location.href ='index.php?page=home';
+					console.log(resp);
+						location.href= "index.php?page=home";
 				}else if(resp == 2){
 					location.href ='voting.php';
 				}else{
