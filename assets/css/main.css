@@ -251,6 +251,22 @@ p{
 	text-align: left; 
 }
 /* End Services section */
+/* Custom btn*/
+.btn-apply{
+text-align: center;
+position: relative;
+bottom: 100px;
+}
+
+.applyLoan{
+	padding: 10px 10px;
+	width: 130px;
+	background-color: rgb(41, 50, 60);
+	margin: 10px 10px;
+	color: white;
+	cursor: pointer
+}
+
 /* Start Contact section */
 #contact .contact{
 	flex-direction: column;
