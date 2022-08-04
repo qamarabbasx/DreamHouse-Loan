@@ -1,9 +1,6 @@
 <?php
  include 'db_connect.php';
 ?>
-
-	
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +17,7 @@
 		<div class="header container">
 			<div class="nav-bar">
 				<div class="brand">
-					<a href="#hero"><h1 class="section-title"><span>D</span>REAM   <span>H</span>ome <span>L</span>one</h1></a>
+					<a href=""><h1 class="section-title"><span>D</span>REAM   <span>H</span>ome <span>L</span>oan</h1></a>
 				</div>
 				<div class="nav-list">
 					<div class="hamburger">
@@ -30,8 +27,25 @@
 						<li><a href="homePage.php" data-after='HOME'>HOME</a></li>
 						<li><a href="about.php" data-after='About'>About</a></li>
 						<li><a href="contact.php" data-after='Contact'>Contact</a></li>
-						<li><a href="login.php" data-after='Project'>Apply</a></li>
-					
+						<!-- <li><a href="login.php" data-after='Project'>Apply</a></li> -->
+						<?php
+							session_start();
+							if(isset($_SESSION['login_id'])){
+								if ($_SESSION['login_id']) {
+									?>
+                        <li><a href="ajax.php?action=logout">Logout</a></li>
+												<?php
+                    } else {
+											
+									}
+								} else{
+									?>
+                        <li><a href="registration.php">Register</a></li>
+                        <li><a href="login.php">Log In</a></li>
+												<?php
+								}
+									
+            ?>
 					</ul>
 				</div>
 			</div>

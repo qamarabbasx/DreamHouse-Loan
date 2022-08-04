@@ -100,7 +100,7 @@
 				console.log(resp)
 				if(resp == 1){
 					console.log(resp);
-						location.href= "homePage.php";
+						location.href= "index.php?page=home";
 				}else if(resp == 2){
 					location.href ='voting.php';
 				}else{
