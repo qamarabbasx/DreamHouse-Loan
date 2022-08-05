@@ -3,11 +3,11 @@
 include 'nav.php';
 // include('./header.php'); 
  ?>
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/DataTables/datatables.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/DataTables/datatables.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <style>
 .modal-dialog.large {
@@ -80,7 +80,7 @@ include 'nav.php';
     <!-- Modal  -->
     <div id="preloader"></div>
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-        <!-- <div class="modal fade" id="confirm_modal" role='dialog'>
+        <div class="modal fade" id="confirm_modal" role='dialog'>
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -95,7 +95,7 @@ include 'nav.php';
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="modal fade" id="uni_modal" role='dialog'>
             <div class="modal-dialog modal-md" role="document">
                 <div class="modal-content">
@@ -121,6 +121,7 @@ include 'nav.php';
                 $(this).remove();
             })
         }
+        
         window.uni_modal = function($title = '' , $url='',$size=""){
         start_load()
         $.ajax({
@@ -144,32 +145,27 @@ include 'nav.php';
             }
         })
     }
+    window.alert_toast= function($msg = 'TEST',$bg = 'success'){
+      $('#alert_toast').removeClass('bg-success')
+      $('#alert_toast').removeClass('bg-danger')
+      $('#alert_toast').removeClass('bg-info')
+      $('#alert_toast').removeClass('bg-warning')
+
+    if($bg == 'success')
+      $('#alert_toast').addClass('bg-success')
+    if($bg == 'danger')
+      $('#alert_toast').addClass('bg-danger')
+    if($bg == 'info')
+      $('#alert_toast').addClass('bg-info')
+    if($bg == 'warning')
+      $('#alert_toast').addClass('bg-warning')
+    $('#alert_toast .toast-body').html($msg)
+    $('#alert_toast').toast({delay:2000}).toast('show');
+  }
     // $('#borrower-list').dataTable()
 	$('#new_borrower').click(function(){
 		uni_modal("New borrower","manage_borrower.php",'mid-large')
 	})
-	$('.edit_borrower').click(function(){
-		uni_modal("Edit borrower","manage_borrower.php?id="+$(this).attr('data-id'),'mid-large')
-	})
-	$('.delete_borrower').click(function(){
-		_conf("Are you sure to delete this borrower?","delete_borrower",[$(this).attr('data-id')])
-	})
-    function delete_borrower($id){
-        start_load()
-        $.ajax({
-            url:'ajax.php?action=delete_borrower',
-            method:'POST',
-            data:{id:$id},
-            success:function(resp){
-                if(resp==1){
-                    alert_toast("borrower successfully deleted",'success')
-                    setTimeout(function(){
-                        location.reload()
-                    },1500)
-
-                }
-            }
-        })
-    }
+    
     </script>
 	

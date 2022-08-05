@@ -10,10 +10,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!-- Vendor CSS Files -->
-  <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-  <!-- <link href="assets/DataTables/datatables.min.css" rel="stylesheet"> -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-	<!-- <link href="assets/css/style.css" rel="stylesheet"> -->
 </head>
 <body>
 	<!--  Navigation Bar Section Start -->
@@ -37,6 +35,8 @@
 							if(isset($_SESSION['login_id'])){
 								if ($_SESSION['login_id']) {
 									?>
+										<button class="btn btn-light mt-4 btn-lg float-right" type="button" id="calculateLoan">Loan Calculate</button>
+                        <!-- <li><a href=""></a></li> -->
                         <li><a href="ajax.php?action=logout">Logout</a></li>
 												<?php
                     } else {
@@ -56,3 +56,12 @@
 		</div>
 	</section>
 	<!--  Navigation Bar Section End -->
+
+
+	<script>
+	$('#calculateLoan').click(function(){
+		uni_modal("New Loan Application","userLoan.php",'mid-large')
+	})
+	
+
+</script>
