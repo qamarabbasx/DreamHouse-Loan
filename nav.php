@@ -35,7 +35,7 @@
 							if(isset($_SESSION['login_id'])){
 								if ($_SESSION['login_id']) {
 									?>
-										<button class="btn btn-light mt-4 btn-lg float-right" type="button" id="calculateLoan">Loan Calculate</button>
+										
                         <!-- <li><a href=""></a></li> -->
                         <li><a href="ajax.php?action=logout">Logout</a></li>
 												<?php
@@ -56,12 +56,3 @@
 		</div>
 	</section>
 	<!--  Navigation Bar Section End -->
-
-
-	<script>
-	$('#calculateLoan').click(function(){
-		uni_modal("New Loan Application","userLoan.php",'mid-large')
-	})
-	
-
-</script>

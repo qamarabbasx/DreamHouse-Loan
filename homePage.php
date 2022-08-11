@@ -3,7 +3,7 @@
 include 'nav.php';
 // include('./header.php'); 
  ?>
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/DataTables/datatables.min.js"></script>
@@ -67,6 +67,7 @@ include 'nav.php';
                 if(isset($_SESSION['login_id'])){
                     if ($_SESSION['login_id']) {
                         ?>
+                        <button class="applyLoan" type="button" id="calculateLoan">Loan Calculate</button>
                         <button class="applyLoan" type="button" id="new_borrower">Apply Now</button>
                         <?php
                         } else {}
@@ -104,7 +105,7 @@ include 'nav.php';
                     </div>
                     <div class="modal-body"></div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
+                        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Next</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -113,6 +114,9 @@ include 'nav.php';
 	<?php include 'footer.php' ?>
 </body>
     <script>
+        $('#calculateLoan').click(function(){
+		uni_modal("New Loan Application","userLoan.php",'mid-large')
+	})
         window.start_load = function(){
             $('body').prepend('<di id="preloader2"></di>')
         }
@@ -121,7 +125,7 @@ include 'nav.php';
                 $(this).remove();
             })
         }
-        
+
         window.uni_modal = function($title = '' , $url='',$size=""){
         start_load()
         $.ajax({
@@ -139,12 +143,13 @@ include 'nav.php';
                     }else{
                         $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md")
                     }
-                    $('#uni_modal').modal('show')
+                    $('#uni_modal').modal('show');
                     end_load()
                 }
             }
         })
     }
+   
     window.alert_toast= function($msg = 'TEST',$bg = 'success'){
       $('#alert_toast').removeClass('bg-success')
       $('#alert_toast').removeClass('bg-danger')
@@ -166,6 +171,10 @@ include 'nav.php';
 	$('#new_borrower').click(function(){
 		uni_modal("New borrower","manage_borrower.php",'mid-large')
 	})
+    
+    $('#submit').click(function(){
+            uni_modal("New Loan Application","homeLoan.php",'mid-large')
+        })
     
     </script>
 	
