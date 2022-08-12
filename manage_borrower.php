@@ -40,7 +40,7 @@ if(isset($_GET['id'])){
 				</div>
 				<div class="col-md-5">
 					<div class="">
-						<label for="">Contact #</label>
+						<label for="">Contact No</label>
 						<input type="text" class="form-control" name="contact_no" value="<?php echo isset($contact_no) ? $contact_no : '' ?>">
 					</div>
 				</div>
@@ -52,7 +52,7 @@ if(isset($_GET['id'])){
 				</div>
 				<div class="col-md-5">
 					<div class="">
-						<label for="">Tax ID</label>
+						<label for="">CNIC</label>
 						<input type="text" class="form-control" name="tax_id" value="<?php echo isset($tax_id) ? $tax_id : '' ?>">
 					</div>
 				</div>

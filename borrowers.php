@@ -46,9 +46,9 @@
 						 	<td>
 						 		<p>Name :<b><?php echo ucwords($row['lastname'].", ".$row['firstname'].' '.$row['middlename']) ?></b></p>
 						 		<p><small>Address :<b><?php echo $row['address'] ?></small></b></p>
-						 		<p><small>Contact # :<b><?php echo $row['contact_no'] ?></small></b></p>
+						 		<p><small>Contact No :<b><?php echo $row['contact_no'] ?></small></b></p>
 						 		<p><small>Email :<b><?php echo $row['email'] ?></small></b></p>
-						 		<p><small>Tax ID :<b><?php echo $row['tax_id'] ?></small></b></p>
+						 		<p><small>CNIC :<b><?php echo $row['cnic'] ?></small></b></p>
 						 		
 						 	</td>
 						 	<td class="">None</td>
